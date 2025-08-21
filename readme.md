@@ -1,40 +1,28 @@
-# My Discord Bot Project Template
+# Luoxi - Utility & Roleplay Discord Bot
 
-# Folders
+## Features
 
--   `events/`: Contains event handlers for the bot.
--   `registers/`: Contains command registration logic.
--   `interactions/`: Contains interaction handlers for the bot.
+-   [✅] `/avatar` commands
 
-# Utility
+    -   [✅] Write messages as your avatar with the bracket system
+    -   [✅] Create basic avatars (name, bracket and avatar image)
+    -   [✅] Edit an avatar (name, bracket and avatar image)
 
--   `eventBuilder.ts` - type-safe function to return the right event type in your separated files.
+-   [❌] `/travel` command
+    _For the roleplay side of the bot. It is used to immersively show target channel or category and hide others_
 
-## eventBuilder
+    -   [❌] Select Menu
+    -   [❌] Select menu only containing "near" places
+    -   [❌] Showing target channel/category
+    -   [❌] Hiding others
 
-**Usage**
+-   [❌] `/rr` commands
+    _Reaction Roles commands_
 
-```ts
-// Imagine it's the ready.ts file
-import eventBuilder from "./eventBuilder.ts";
+    -   [❌] `/rr add`
+    -   [❌] `/rr remove`
 
-export default eventBuilder<"ready">((client) => {
-    // Do your stuff here, client parameter is typed.
-});
-```
-
-# What You Have To Do
-
-1. Create a `.env` file in the root directory and add your Discord bot token:
-
-    ```
-    TOKEN=your_bot_token
-    ```
-
-2. Implement your bot's functionality by adding event handlers in the `events/` folder.
-
-3. Define your bot's commands in the `registers/` folder.
-
-4. Handle interactions in the `interactions/` folder.
-
-5. Add your database tables with Sequelize in `db.ts`
+-   [❌] `/welcome` commands
+    -   [❌] `/welcome message`
+    -   [❌] `/welcome user-roles`
+    -   [❌] `/welcome bot-roles`
