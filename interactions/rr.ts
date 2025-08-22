@@ -74,7 +74,7 @@ export default async function rr(interaction: ChatInputCommandInteraction) {
                     interaction.client.user.displayAvatarURL()
             )
             .setFooter({
-                text: "Luoxi • Reaction Roles",
+                text: process.env.NAME + " • Reaction Roles",
                 iconURL: interaction.client.user?.displayAvatarURL(),
             })
             .setTimestamp();
@@ -123,7 +123,7 @@ export default async function rr(interaction: ChatInputCommandInteraction) {
                     interaction.client.user.displayAvatarURL()
             )
             .setFooter({
-                text: "Luoxi • Reaction Roles",
+                text: process.env.NAME + " • Reaction Roles",
                 iconURL: interaction.client.user?.displayAvatarURL(),
             })
             .setTimestamp();

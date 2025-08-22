@@ -31,7 +31,7 @@ export default async function (
         .setThumbnail(interaction.user.displayAvatarURL())
         .setTimestamp()
         .setFooter({
-            text: "Luoxi",
+            text: process.env.NAME ?? "Luo",
             iconURL: interaction.client.user?.displayAvatarURL(),
         })
         .setImage("attachment://banner-avatars.png");

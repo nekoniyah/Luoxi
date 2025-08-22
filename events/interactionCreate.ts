@@ -16,33 +16,37 @@ export default eventBuilder<"interactionCreate">(async (interaction) => {
         path.join(__dirname, "..", "interactions")
     );
 
-    if (interaction.isCommand()) {
-        const { commandName } = interaction;
+    try {
+        if (interaction.isCommand()) {
+            const { commandName } = interaction;
 
-        const interactionFile = interactionFolder.find(
-            (file) => file === `${commandName}.ts`
-        );
+            const interactionFile = interactionFolder.find(
+                (file) => file === `${commandName}.ts`
+            );
 
-        if (interactionFile) {
+            if (interactionFile) {
+                const { default: f } = await import(
+                    `../interactions/${interactionFile}`
+                );
+
+                await interaction.deferReply({
+                    withResponse: false,
+                });
+
+                await f(interaction, now, avatars);
+            }
+        } else if (interaction.isButton() || interaction.isAnySelectMenu()) {
             const { default: f } = await import(
-                `../interactions/${interactionFile}`
+                `../interactions/${interaction.customId}.ts`
             );
 
             await interaction.deferReply({
                 withResponse: false,
             });
 
-            await f(interaction, now, avatars);
+            await f(interaction, avatars);
         }
-    } else if (interaction.isButton() || interaction.isAnySelectMenu()) {
-        const { default: f } = await import(
-            `../interactions/${interaction.customId}.ts`
-        );
-
-        await interaction.deferReply({
-            withResponse: false,
-        });
-
-        await f(interaction, avatars);
+    } catch (e) {
+        console.error(e);
     }
 });

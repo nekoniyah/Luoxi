@@ -33,7 +33,7 @@ export default async function (interaction: ButtonInteraction) {
             .setColor("#E74C3C")
             .setTimestamp()
             .setFooter({
-                text: "Luoxi • Error",
+                text: process.env.NAME + " • Error",
                 iconURL: interaction.user.displayAvatarURL(),
             })
             .setDescription(loc.ui.avatars.not_owner);

@@ -22,7 +22,7 @@ export default async function (
             iconURL: interaction.user.displayAvatarURL(),
         })
         .setFooter({
-            text: "Luoxi • Edit Avatar",
+            text: (process.env.NAME ?? "Luo") + " • Edit Avatar",
             iconURL: interaction.client.user?.displayAvatarURL(),
         });
 

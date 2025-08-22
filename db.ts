@@ -71,6 +71,37 @@ ReactionRole.init(
     }
 );
 
+export class Welcome extends Model {}
+
+Welcome.init(
+    {
+        guildId: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        channelId: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        message: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        userRoleIds: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        botRoleIds: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+    {
+        sequelize,
+        modelName: "Welcome",
+    }
+);
+
 await sequelize.sync();
 await sequelize.authenticate();
 

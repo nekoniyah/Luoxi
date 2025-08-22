@@ -29,7 +29,7 @@
             "deleted": "This reaction role has been deleted."
         },
         "generic": {
-            "footer_brand": "Luoxi"
+            "footer_brand": "${process.env.NAME ?? 'Luo'}"
         }
     }
 }

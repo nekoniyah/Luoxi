@@ -12,7 +12,7 @@ export default async function createAvatar(interaction: ButtonInteraction) {
             iconURL: interaction.user.displayAvatarURL(),
         })
         .setFooter({
-            text: "Luoxi • Avatar Creator",
+            text: process.env.NAME + " • Avatar Creator",
             iconURL: interaction.client.user.displayAvatarURL(),
         })
         .setThumbnail(interaction.user.displayAvatarURL())

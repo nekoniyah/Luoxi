@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from "discord.js";
+import { PermissionsBitField, SlashCommandBuilder } from "discord.js";
 
 export default new SlashCommandBuilder()
     .setName("rr")
@@ -34,4 +34,5 @@ export default new SlashCommandBuilder()
     )
     .addSubcommand((sc) =>
         sc.setName("remove").setDescription("Remove an existing reaction role")
-    );
+    )
+    .setDefaultMemberPermissions(PermissionsBitField.Flags.ManageRoles);

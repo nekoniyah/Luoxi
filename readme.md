@@ -1,4 +1,4 @@
-# Luoxi - Utility & Roleplay Discord Bot
+# Luo - Utility & Roleplay Discord Bot
 
 ## Features
 
@@ -16,11 +16,11 @@
     -   [❌] Showing target channel/category
     -   [❌] Hiding others
 
--   [❌] `/rr` commands
+-   [✅] `/rr` commands
     _Reaction Roles commands_
 
-    -   [❌] `/rr add`
-    -   [❌] `/rr remove`
+    -   [✅] `/rr add`
+    -   [✅] `/rr remove`
 
 -   [❌] `/welcome` commands
     -   [❌] `/welcome message`
